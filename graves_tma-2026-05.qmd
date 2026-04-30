@@ -1005,6 +1005,7 @@ Sources: HCP-LAN / AHIP APM Measurement (CY 2024); CMS MSSP Participation Highli
   PART 3: WHERE THE HOPE IS
 ----------------------------------------------->
 
+<!--
 # Part 3: Where the hope is {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
 
 ::: {style="text-align: center; color: #999; font-size: 1.0em; margin-top: 30px;"}
@@ -1095,10 +1096,6 @@ Maryland's all-payer global hospital budgets are in their second decade — capi
 :::
 
 
-<!---------------------------------------------
-  PART 4: THE BILL, AND YOUR AGENCY
------------------------------------------------>
-
 # Part 4: The bill, and your agency {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
 
 
@@ -1169,6 +1166,7 @@ Owen Graduate School of Management
 ::: {.notes}
 Discussion prompt if needed: "Where do you see the chassis bending — or hardening — in your own practice?"
 :::
+-->
 
 
 <!---------------------------------------------
