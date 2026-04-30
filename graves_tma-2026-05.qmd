@@ -1,0 +1,869 @@
+---
+title: "Paying for Tomorrow's Health Care"
+author:
+  - name: John A. Graves, Ph.D.
+    affiliations:
+      - name: Professor of Health Policy and Medicine, Vanderbilt School of Medicine
+      - name: Professor of Management, Owen Graduate School of Management
+date: 2026-05-01
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    incremental: false
+    slide-number: false
+    transition: fade
+    background-transition: fade
+    embed-resources: true
+    width: 1280
+    height: 720
+    center: true
+    fig-align: center
+    include-before-body: password-gate.html
+    title-slide-attributes:
+      data-background-color: "#1C1C1C"
+editor: source
+---
+
+
+<!---------------------------------------------
+  DISCLOSURES
+----------------------------------------------->
+
+## Disclosures {style="font-size: 30px;"}
+
+<br>
+
+::: {style="font-size: 0.95em;"}
+
+| Relationship | Entity |
+|:---|:---|
+| Spouse — Employment | Aledade, Inc. (a primary care accountable care organization) |
+| Other commercial interests | **None** |
+
+:::
+
+<br>
+
+::: {style="color: #777; font-size: 0.9em;"}
+The content of this presentation reflects the speaker's independent academic analysis. No commercial entity has reviewed, edited, or approved any portion of the material.
+:::
+
+::: {.notes}
+Standard physician disclosure. Spouse's employment at Aledade is the only relevant relationship — disclose because Aledade is a primary care ACO enabler, and the talk discusses ACOs and value-based care arrangements (Part 2). I have no consulting, equity, speakers bureau, honoraria, or research support relationships with any commercial entity in healthcare. The analysis in this talk is independent.
+:::
+
+
+<!---------------------------------------------
+  PART 1: THE CHASSIS
+----------------------------------------------->
+
+# Part 1: The Chassis {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+
+::: {style="text-align: center; color: #999; font-size: 1.0em; margin-top: 30px;"}
+The same payment architecture runs through every U.S. health-care dollar.
+:::
+
+
+## {background-color="#F5F3EF"}
+
+::: {.notes}
+Pose the question and pause. Let the room vote — U.S., Canada, Germany, or other? Most physicians will guess U.S., because the chassis they live with sounds exactly like this. Don't reveal yet.
+:::
+
+::: {style="text-align: center; margin-top: 60px;"}
+
+::: {.fragment style="font-size: 1.6em; font-weight: 600; color: #1C1C1C; line-height: 1.3;"}
+A high-income country pays outpatient physicians **fee-for-service** off a national fee schedule.
+:::
+
+<br>
+
+::: {.fragment style="font-size: 1.6em; font-weight: 600; color: #1C1C1C; line-height: 1.3;"}
+Hospitals are paid **per case via DRGs**.
+:::
+
+<br>
+
+::: {.fragment style="font-size: 1.6em; font-weight: 600; color: #1C1C1C; line-height: 1.3;"}
+**Private insurers** compete for patients.
+:::
+
+<br><br>
+
+::: {.fragment style="font-size: 1.2em; color: #946E24; font-style: italic;"}
+Which country?
+:::
+
+:::
+
+
+## It's Germany — same chassis, very different cost {style="font-size: 30px;"}
+
+::: {.notes}
+Reveal. Germany's payment chassis is structurally identical to U.S. Medicare on the surface — outpatient FFS, inpatient DRGs. But the outpatient FFS sits inside a regional global budget: sickness funds pay each regional physician association (KV) a fixed annual sum, and the KV distributes payment via floating point values. If total volume exceeds budget, point values get retroactively reduced. Yet Germany spends roughly two-thirds of what we do per capita. The chassis isn't what makes the U.S. expensive.
+
+The U.S./Germany comparison is not a fringe critique — it was the lifework of Uwe Reinhardt, the German-born Princeton economist who spent forty years pointing out that other countries (Germany above all) achieved universal coverage and cost control using payment tools structurally similar to ours. *Priced Out* (2019) is the book-length statement of the argument we are making in this talk. Reinhardt's central observation: Americans pay roughly twice what Germans pay, while consuming fewer services. The difference is not the chassis.
+:::
+
+<br>
+
+::: {.fragment style="text-align: center; font-size: 1.15em; line-height: 1.6;"}
+Outpatient is FFS off the **EBM** schedule.
+
+Inpatient via **G-DRGs**.
+:::
+
+<br>
+
+::: {.fragment style="text-align: center; font-size: 1.4em;"}
+**~$9,400** per capita
+
+vs.
+
+**~$13,500** in the U.S.
+:::
+
+<br>
+
+::: {.fragment style="text-align: center; color: #777; font-size: 0.95em;"}
+The chassis is the same. The structures *around* the chassis are not.
+:::
+
+::: {.fragment .aside data-fragment-index="0"}
+EBM = *Einheitlicher Bewertungsmaßstab* (Uniform Value Scale) — Germany's national outpatient fee schedule
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: OECD Health at a Glance, 2023.
+:::
+
+
+## US vs. Germany {style="font-size: 28px;"}
+
+<br>
+
+::: {style="font-size: 0.9em;"}
+
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+<th style="text-align: left; width: 24%; padding: 8px;"></th>
+<th style="text-align: left; width: 38%; padding: 8px;">U.S.</th>
+<th class="fragment" data-fragment-index="1" style="text-align: left; width: 38%; padding: 8px;">Germany</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #F5F3EF;">
+<td style="padding: 8px;"><strong>Risk pooling</strong></td>
+<td style="padding: 8px;">Fragmented</td>
+<td class="fragment" data-fragment-index="1" style="padding: 8px;">Universal via ~95 sickness funds</td>
+</tr>
+<tr>
+<td style="padding: 8px;"><strong>Benefits package</strong></td>
+<td style="padding: 8px;">Vary by plan, employer, year</td>
+<td class="fragment" data-fragment-index="1" style="padding: 8px;">Single nationally defined package</td>
+</tr>
+<tr style="background-color: #F5F3EF;">
+<td style="padding: 8px;"><strong>Payment rates</strong></td>
+<td style="padding: 8px;">Bilaterally negotiated in a quasi-market</td>
+<td class="fragment" data-fragment-index="1" style="padding: 8px;">Collectively negotiated; applied uniformly</td>
+</tr>
+<tr>
+<td style="padding: 8px;"><strong>Aggregate spending control</strong></td>
+<td style="padding: 8px;">None</td>
+<td class="fragment" data-fragment-index="1" style="padding: 8px;">Regional outpatient budgets; KHVVG hospital reform (2025)</td>
+</tr>
+</tbody>
+</table>
+
+:::
+
+::: {.notes}
+Four guardrails Germany has and the U.S. doesn't. The third row is the one most often misread: we DO have collective national price-setting — Medicare's RVU/DRG system. The difference is that in Germany the schedule IS the price; every sickness fund pays the same EBM points at the same point value. In the U.S., the schedule is the floor, and every commercial payer-provider pair negotiates a multiplier on top of it. Consolidation is what pushes that multiplier higher. Sources: Commonwealth Fund Germany Profile; CBO (2022); European Observatory KHVVG Analysis.
+
+On the "Aggregate spending control" row — be ready for pushback from physicians who live with budget neutrality. The honest framing: the U.S. has *segment-internal* spending controls — RVU budget neutrality (when one service's RVUs go up, others adjust so Medicare physician spending doesn't grow due to revaluation alone), MACRA-capped conversion factor updates, IPPS productivity adjustments, MA benchmark caps, and the IRA Part D negotiation. Each is real. But every one of them constrains a *slice* of the system — Medicare physicians, Medicare hospitals, MA — while commercial spending, where the multiplier lives, is unconstrained. So providers can (and do) shift volume and intensity into commercial-priced settings, and the system-wide spending growth continues. Germany's guardrail is whole-system: regional outpatient budgets bind every fund and every physician simultaneously, and the KHVVG hospital reform (phasing 2025–2029) does the same on the inpatient side. The cell says "None" as shorthand for "no system-wide brake" — say "no brake that crosses payer lines" if the room is technical.
+
+Reinhardt would frame this slide as the visible surface of a deeper, moral question. In *Priced Out* (2019), he writes that "our arguments always have been, are now, and will continue forever to be over the elephant in the room no one likes to mention, namely, the fundamental question, *to what extent we should be our poor and sick brothers' and sisters' keeper in health care*." Germany's five guardrails are downstream of having answered that question — a settled social contract that the U.S. has never reached. The structural absences on the right column are the operational expression of an unsettled moral debate on the left.
+:::
+
+
+## One in three U.S. health-care dollars is administrative {style="font-size: 28px;"}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+
+::: {style="font-size: 2.5em; font-weight: 700; color: #946E24;"}
+$2,500
+:::
+
+::: {style="font-size: 1.0em; color: #1C1C1C;"}
+per capita on admin in the U.S.
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+
+::: {style="font-size: 2.5em; font-weight: 700; color: #1C1C1C;"}
+$550
+:::
+
+::: {style="font-size: 1.0em; color: #1C1C1C;"}
+per capita in Canada
+:::
+:::
+:::
+
+::::
+
+<br>
+
+::: {style="text-align: center; font-size: 1.05em; color: #1C1C1C;"}
+Per-physician admin cost is **~4× higher** than Canada's.
+
+Practice spending on prior-auth staffing rose **43%** from 2019 to 2024.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: Cutler, Brookings (2020); Himmelstein, Campbell, Woolhandler, *Annals of Internal Medicine* (2020); MGMA (2024).
+:::
+
+::: {.notes}
+Cutler estimates 25–33% of U.S. spending is administrative. Each U.S.-side guardrail absence on the prior slide produces a separate stream of admin work — credentialing × N payers, coverage determinations and prior auth, contract negotiation and denials, deductible tracking and collections. Cutler estimates ~$50B/year in achievable savings from streamlining alone. This is where the room nods.
+
+Reinhardt's framing of the same data: in *Priced Out*, he describes American patients as "blindfolded shoppers in department stores searching helplessly for what they need" — purchasing through "myriad insurance schemes" that vary by employer, age, and demographics. He puts the per-physician fragmentation cost at ~$80,000/year (vs. ~$22,000 in Canada) — essentially the same number Himmelstein replicated in 2020. Reinhardt's deeper claim: the administrative overhead is not a bug. It is the operational footprint of the U.S. choice to run thousands of bilateral negotiations instead of one collective one.
+
+A line worth landing from the podium: *"American healthcare is expensive because we have built an enormous industry to negotiate the price of fee-for-service and design artisanal benefit packages, another industry to submit the bills, and a still larger industry to deny the bills that result."*
+:::
+
+
+## Medicare prices ~10,000 services with one formula {style="font-size: 30px;"}
+
+<br>
+
+::: {style="text-align: center; font-size: 1.1em; line-height: 1.4;"}
+
+Payment  =  [
+[Work]{style="font-weight: 600;"}  +  [Practice Expense]{style="font-weight: 600;"}  +  [Malpractice]{style="font-weight: 600;"}
+]{style="border-bottom: 3px solid #946E24; padding-bottom: 6px;"}  ×  [Conversion Factor]{style="font-weight: 600;"}
+
+[Relative Value Units (RVUs)]{style="font-size: 0.7em; color: #946E24; font-style: italic;"}
+
+:::
+
+. . .
+
+<br>
+
+A committee of physicians (the **RUC**) recommends the relative weights. CMS accepts **~90%**.
+
+. . .
+
+It is **zero-sum** by design — every specialty competes for a slice of a fixed pie.
+
+::: {.aside}
+RUC = Relative Value Scale Update Committee · CMS = Centers for Medicare & Medicaid Services
+:::
+
+::: {.notes}
+The point isn't the formula — it's that there is one. The RUC's recommendations get ~90% adoption, so a small group sets relative values for the entire industry. Budget neutrality means one specialty's gain is another's loss.
+:::
+
+
+## Budget neutrality reaches a fragment of one term {style="font-size: 24px;"}
+
+::: {.notes}
+This is the operational answer to the "but we have budget neutrality" pushback.
+
+Spending is the accounting identity P × Q. We can decompose P further: in the U.S., what providers actually receive is the Medicare fee schedule price times a commercial multiplier — $P = P^{CMS} \times M$. So total spending decomposes into $P^{CMS} \times M \times Q$.
+
+Budget neutrality acts on $P^{CMS}$ — and only on its *relative* values across services, not on its overall level. When CMS adds or revalues RVUs, the conversion factor adjusts so the change is revenue-neutral *within Medicare physician spending*. It is zero-sum across specialties. It is not zero-sum across volume. Aggregate Medicare spending grows whenever Q grows, which it always does.
+
+$M$ is bilaterally negotiated commercial pricing on top of the Medicare schedule. Nothing constrains it. Consolidation pushes it up.
+
+$Q$ is volume. Nothing constrains it at the system level. FFS incentives push it up.
+
+So when we said earlier that the U.S. has "no system-wide brake on aggregate spending" — this is what that means operationally. We have a partial brake on the relative shape of one of three terms. Germany's regional outpatient budget caps $P \times Q$ together by floating the point value as Q grows.
+:::
+
+<br>
+
+::: {.fragment style="text-align: center; font-size: 1.7em;"}
+Spending = $P \times Q$
+:::
+
+<br>
+
+::: {.fragment style="text-align: center; font-size: 1.7em;"}
+Spending = $P^{\text{CMS}} \times M \times Q$
+:::
+
+
+## The chassis is the same. The multiplier is what diverges. {style="font-size: 26px;"}
+
+<br>
+
+::: {style="text-align: center; font-size: 1.1em; line-height: 1.8;"}
+
+Medicare:    RVUs × $33.89 × **[1.0]{style="color: #946E24;"}**
+
+U.S. commercial:    RVUs × $33.89 × **[1.8]{style="color: #C03;"}**  *(bilaterally negotiated)*
+
+:::
+
+<br>
+
+::: {style="font-size: 1.05em; text-align: center; color: #777;"}
+We have collective national price-setting. We just don't enforce it as the actual price.
+:::
+
+::: {.notes}
+We DO have collective national price-setting — that's exactly what Medicare's RVU/DRG schedule is. The difference between the U.S. and Germany isn't the schedule. It's what we let happen on top of it. In Germany, the schedule IS the price; the multiplier is 1.0 across every payer. In the U.S., the schedule is the floor, and every commercial payer-provider pair negotiates a multiplier on top of it — averaging 1.8 (CBO 2022 puts hospital services at 2.23×, outpatient 2.40×, inpatient 1.82×). About 75% of commercial services are directly benchmarked to Medicare's relative values. Consolidation is the lever that pushes that multiplier higher.
+
+If the room asks how Germany does it, the analogous formula is: *EBM points × regional point value × 1.0* — the same chassis priced uniformly across all ~95 sickness funds because there is one collective buyer per region.
+
+This is exactly Reinhardt's "fragmented buyer" thesis. In *Priced Out* and across his Health Affairs work, he attributed U.S. price levels not to the payment chassis but to the absence of unified purchasing — "myriad insurance schemes" instead of "uniform fee schedules and rules." The multiplier on this slide is the operational form of that fragmentation.
+:::
+
+
+## Commercial pays well above Medicare — varying by service type {style="font-size: 24px;"}
+
+::: {.notes}
+This slide gives the empirical anchor for the "1.8" on the prior slide. The multiplier isn't one number — it's a tier, varying by service type, but always above 1.0. Hospital outpatient is the highest premium (240%) because of consolidation in the hospital outpatient department market — many services that used to happen in physician offices now happen in HOPDs at the higher rate. Inpatient (182%) is closer to Medicare because there's more direct competition and DRG pricing is harder to mark up. Physician services (129%) are the closest to Medicare — physicians have the least negotiating leverage. The tiered structure is the operational form of differential market power across segments. Source: CBO (2022).
+:::
+
+<br>
+
+::: {style="font-size: 1.0em;"}
+
+| Service type | Commercial as % of Medicare |
+|:---|:---:|
+| Hospital services (combined) | **223%** |
+| Hospital outpatient | 240% |
+| Hospital inpatient | 182% |
+| Physician services | 129% |
+
+:::
+
+<br>
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Congressional Budget Office (2022).
+:::
+
+
+## A $1 Medicare cut becomes a $1.16 private cut {style="font-size: 30px;"}
+
+<br>
+
+![](media/clemens-gottlieb-price-following.png){fig-align="center" width="55%"}
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Clemens & Gottlieb, "In the Shadow of a Giant," *Journal of Political Economy* (2017).
+:::
+
+::: {.notes}
+When Medicare changes a price, the change amplifies in private contracts because of the multipliers. So every flaw, bias, and incentive baked into Medicare's architecture gets transmitted across the system. Private prices follow Medicare *down*, not up. The takeaway lands on the next slide.
+:::
+
+
+## {background-color="#1C1C1C"}
+
+::: {style="text-align: center; margin-top: 80px; max-width: 900px; margin-left: auto; margin-right: auto;"}
+
+::: {style="border-left: 4px solid #CFAE70; padding: 30px 40px; background-color: rgba(148, 110, 36, 0.1);"}
+
+::: {style="font-size: 1.5em; color: #E0D5C0; line-height: 1.6;"}
+The chassis is a **sounding board** — Medicare's signal echoes through every multiplier.
+:::
+
+:::
+
+:::
+
+::: {.notes}
+The key point. Whatever Medicare prices — well or poorly — gets transmitted, with amplification, across the entire payment ecosystem because of the multipliers built on top of it. This is why getting Medicare's relative values right matters so much. And it's why budget-neutrality games at the RUC have economy-wide consequences. The chassis is not a quiet platform; it broadcasts.
+:::
+
+
+## FFS rewards volume — but volume isn't where U.S. cost comes from {style="font-size: 24px;"}
+
+<br>
+
+::: {style="font-size: 1.0em;"}
+
+|  | U.S. | Germany | OECD avg. |
+|:---|:---:|:---:|:---:|
+| Doctor visits / capita | 4.0 | **9.9** | 6.8 |
+| Hospital beds / 1,000 | 2.8 | **7.8** | 4.3 |
+| Average length of stay (days) | 5.4 | **8.9** | 6.7 |
+
+:::
+
+<br>
+
+::: {style="font-size: 1.05em; text-align: center;"}
+The FFS volume incentive is real. Germany has it too.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: OECD Health Statistics; Anderson, Reinhardt et al., *Health Affairs* (2003).
+:::
+
+::: {.notes}
+"It's the prices, stupid." — Anderson, Reinhardt et al., Health Affairs (2003). Two decades old, still the cleanest summary. Engage the audience's existing mental model directly: yes, FFS rewards volume — but if that were the dominant explanation for U.S. cost, Germany (with the same FFS chassis) would also be high-cost. It isn't. Germans see the doctor MORE than we do, have MORE beds, stay LONGER. Aggregate volume in Germany is higher; spending is lower. So FFS volume incentives are necessary but not sufficient. The U.S. premium is in price per unit and in the administrative tax stacked on top of those units.
+
+Reinhardt's exact framing in *Priced Out*: Americans pay roughly twice what Germans pay for healthcare while consuming fewer services. He titled the book around this asymmetry — the "priced out" is the working- and middle-class American who can no longer afford the system, not the patient who consumes too much of it.
+:::
+
+
+## Consolidation pushes the multiplier up {style="font-size: 26px;"}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {style="font-size: 1.2em;"}
+**1,331** hospital mergers since 2000
+
+**69%** of hospitals now in systems
+
+Physician employment: **28% → 47%**
+<span style="font-size: 0.7em; color: #777;">(2008–2016)</span>
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {style="font-size: 1.05em; margin-top: 20px;"}
+CBO: **zero association** between commercial physician prices and quality.
+:::
+
+:::
+
+::::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Gaynor, "Three Points About Consolidation in Health Care Markets" (2025); CBO (2022).
+:::
+
+::: {.notes}
+The cost-shifting story — "Medicare underpays so we charge commercial more" — is intuitive but doesn't survive the data. Profit-maximizing firms don't sit on unused market power. The real driver is leverage from horizontal and vertical consolidation. Network adequacy means insurers must include dominant systems, so the insurer's only weapon — exclusion — is gone. The Germany tie-in is critical: in their system, consolidation can't move multipliers because there is no multiplier above the schedule. Consolidation in the U.S. IS multiplier leverage. That's the whole game.
+
+Reinhardt has a useful aphorism for why consolidation, once it has occurred, is so politically difficult to unwind: *"every dollar of health spending equals someone's health-care income."* The multiplier above the schedule isn't an accounting artifact — it is the income of consolidated systems, employed physicians, private equity portfolios, and downstream service lines. Reform pressure that reduces the multiplier is reform pressure that reduces somebody's paycheck. That is the political topology, and it is why the levers in Part 3 (site-neutral payment, antitrust, all-payer rate setting) move slowly even when the evidence is clear.
+:::
+
+
+<!---------------------------------------------
+  PART 2: WHAT WE'VE TRIED IN PLACE OF THE GUARDRAILS
+----------------------------------------------->
+
+# Part 2: What we've tried {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+
+
+## Each missing guardrail has produced its own American workaround {style="font-size: 24px;"}
+
+<br>
+
+::: {style="font-size: 0.95em;"}
+
+| Missing guardrail | What we've tried |
+|:---|:---|
+| Risk Bearing and Risk Pooling | Capitation / Medicare Advantage; Value-Based Care |
+| Rate setting (the multiplier) | Reference pricing · price transparency |
+| Aggregate spending control | ACOs · bundles · MA capitation · V-BID |
+
+:::
+
+<br>
+
+::: {style="text-align: center; color: #777; font-size: 0.95em;"}
+Some work. Most orbit the chassis.
+:::
+
+::: {.notes}
+Re-orient the audience: we just diagnosed five structural absences. Now we look at what the U.S. has built in place of each one. We won't dwell on #2 (benefits — the ACA set a floor) or #4 (OOP cap — slow tug-of-war between the ACA cap, IRA Part D, and HDHP expansion).
+
+This framing is consistent with comparative health policy scholarship. Gusmano, Laugesen, Rodwin & Brown ("Getting the Price Right: How Some Countries Control Spending in a Fee-for-Service System," Health Affairs 2020) explicitly argue that FFS is not the cause of U.S. high spending — countries with lower prices use FFS too. Light & Rodwin ("Bending the Cost Growth Curve," Milbank Quarterly 2020, tribute to Uwe Reinhardt) describe the German "quasi-market" of associations of providers and payers as the structural difference. Reinhardt's *Priced Out* (2019) and Anderson, Reinhardt et al. ("It's the Prices, Stupid," Health Affairs 2003) are the spine of this position.
+:::
+
+
+## Where does risk land? {style="font-size: 30px;"}
+
+<br>
+
+Every "risk-bearing" VBC entity creates a **micro-pool**.
+
+. . .
+
+- **MA plans** — full risk on enrolled beneficiaries; selectively healthier
+- **Two-sided ACOs** — closest to genuine pooling; benchmark still FFS-derived
+- **One-sided ACOs** — upside only; not really risk-bearing
+- **Bundled payments** — episode-level, not population-level
+
+. . .
+
+::: {style="font-size: 1.1em; color: #777; margin-top: 20px;"}
+None substitute for population-level pooling. We've re-fragmented risk along new contractual seams.
+:::
+
+::: {.notes}
+None of these substitute for population-level pooling. They re-fragment risk along new seams — by employer, by plan, by attribution algorithm. MA is the largest substitute pool but selects on health (favorable enrollment, coding intensity, supplemental benefits). Two-sided ACOs come closest to genuine population pooling, but the pool is small and the benchmark is still derived from FFS spending. The fundamental fragmentation problem isn't fixed by adding new contractual envelopes; it's relocated.
+:::
+
+
+## Risk-bearing VBC sets its targets from FFS history {style="font-size: 28px;"}
+
+<br>
+
+::: {style="font-size: 1.2em;"}
+**~55%** of payments are still pure FFS or FFS + quality bonus.
+
+**~10%** are global / capitated.
+:::
+
+. . .
+
+<br>
+
+::: {style="font-size: 1.15em;"}
+CBO: CMMI's first decade *increased* net federal spending by **$5.4 billion**.
+:::
+
+. . .
+
+::: {style="color: #777; margin-top: 15px;"}
+A growing share of ACO "savings" comes from **coding intensity**, not different care.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: HCP-LAN APM Measurement (2024); CBO CMMI Evaluation (2023); Ryan et al., "All I Do Is Win" (2023).
+:::
+
+::: {.notes}
+HCP-LAN APM Measurement (2024). MA looks better at ~21% global, but MA plans themselves often pay providers FFS — capitation lives between CMS and the plan, not between the plan and the doctor. The deeper problem: every VBC arrangement except full population capitation derives its benchmark from FFS claims. Hitting an inflated benchmark is not the same as fixing the inflation.
+:::
+
+
+## Reference pricing actually moves the multiplier {style="font-size: 24px;"}
+
+<br>
+
+CalPERS reference price for hip / knee replacement: **$30,000 cap.**
+
+. . .
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+
+::: {style="font-size: 2.8em; font-weight: 700; color: #946E24;"}
+−26%
+:::
+
+::: {style="font-size: 1.0em;"}
+average price
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+
+::: {style="font-size: 2.8em; font-weight: 700; color: #946E24;"}
+85%
+:::
+
+::: {style="font-size: 1.0em;"}
+of savings: hospitals cutting prices
+:::
+:::
+:::
+
+::::
+
+. . .
+
+<br>
+
+::: {style="text-align: center; color: #777;"}
+Change the architecture; don't ask patients to shop.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Robinson & Brown, *Health Affairs* (2017).
+:::
+
+::: {.notes}
+Reference pricing is genuinely off-chassis — the benefit cap forces providers to compete to fit the price, rather than the payer accepting whatever multiplier the market produces. Same pattern with colonoscopy: 21% price drop, ASC use rose 69% → 91%. The lesson: change the architecture, don't ask patients to shop. Reference pricing is the cleanest example of a U.S. workaround that actually attacks the multiplier — payers cap what they will pay; providers either accept the cap or lose the business. Notice the asymmetry with price transparency, which we'll see next: transparency tries to discipline prices through patient shopping; reference pricing disciplines them through the benefit design itself, which is far more effective because the patient doesn't have to act.
+:::
+
+
+## Price transparency: 9% of Americans know the data exists {style="font-size: 24px;"}
+
+<br>
+
+When CalPERS offered a transparency tool, only **12%** of employees used it.
+
+. . .
+
+Patients bypass an average of **6 cheaper MRI providers** to reach their referred appointment.
+
+. . .
+
+::: {style="font-size: 1.15em; margin-top: 20px;"}
+**Physician referral explains ~52× more price variance than cost-sharing.**
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: KFF Health Tracking Poll; Desai et al., *Health Affairs* (2017); Chernew, Cooper et al., *J. Health Economics* (2021).
+:::
+
+::: {.notes}
+Patient shopping isn't moving the market because the channel through which care happens is the physician referral, not the consumer search.
+:::
+
+
+## Worse — published prices can move prices the wrong way {style="font-size: 26px;"}
+
+<br>
+
+Denmark, 1993: published firm-specific concrete prices to enhance competition.
+
+. . .
+
+::: {style="font-size: 1.15em; margin-top: 15px;"}
+Within a year, prices **rose 15–20%** — firms used the data to coordinate upward.
+:::
+
+. . .
+
+::: {style="color: #777; margin-top: 20px;"}
+The primary users of hospital pricing data today are **hospitals and insurers**, not patients.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: Albæk, Møllgaard & Overgaard, *J. Industrial Economics* (1997); Barnes, Glied et al., NBER Working Paper 32580 (2024).
+:::
+
+::: {.notes}
+Transparency in concentrated markets becomes competitive intelligence rather than consumer discipline. Newer evidence (Barnes et al., NBER 2024) shows the same pattern in U.S. healthcare. The lesson: reference pricing changes the price tag at the architecture level and works; transparency assumes patients are the agents who can move the multiplier — and they are not.
+:::
+
+
+## V-BID: tell patients with the copay which care matters {style="font-size: 24px;"}
+
+<br>
+
+**$0 copay** for high-value preventive medications.
+
+**Tiered networks** for procedures.
+
+. . .
+
+<br>
+
+::: {style="text-align: center; font-size: 1.4em;"}
+Medicare Advantage V-BID:
+
+**10 plans (2017)  →  1,000+ (2024)**
+:::
+
+. . .
+
+::: {style="color: #777; margin-top: 20px; text-align: center;"}
+V-BID steers utilization toward high-value care — not by asking patients to shop on price, but by changing the price tag on the choice.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: Choudhry et al., "Full Coverage for Preventive Medications after MI," *NEJM* (2011); CMS Innovation Center.
+:::
+
+::: {.notes}
+Value-based insurance design — make high-value care cheap, low-value care expensive. V-BID belongs in the *aggregate spending control* category because it shapes WHICH services patients use, not WHAT services cost. The hospital still gets paid 2.4× Medicare for the imaging visit; V-BID just affects who walks in for it.
+
+The MI FREEE trial: $0 copay for post-MI statins, beta-blockers, ACE inhibitors → adherence improved 4–6 percentage points with no net spending increase. CMS is making V-BID flexibilities permanent in MA. V-BID works because it uses cost-sharing as a clinical compass rather than a blunt cost-control lever — patients aren't being asked to weigh price against necessity, they're being told which care matters.
+
+Note the family resemblance with reference pricing — both succeed by changing the choice architecture rather than asking patients to shop. They target different guardrails (multiplier vs. utilization mix), but the underlying design lesson is the same.
+:::
+
+
+<!---------------------------------------------
+  PART 3: WHERE THE HOPE IS
+----------------------------------------------->
+
+# Part 3: Where the hope is {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+
+::: {style="text-align: center; color: #999; font-size: 1.0em; margin-top: 30px;"}
+The system is reformable — and it is reforming, slowly.
+:::
+
+
+## The cost curve has bent {style="font-size: 30px;"}
+
+<br>
+
+::: {style="text-align: center; font-size: 1.4em;"}
+National health spending is **~$977B below** 2010 projections.
+:::
+
+. . .
+
+<br>
+
+::: {style="text-align: center; font-size: 1.2em;"}
+Medicare per-beneficiary spending growth fell from
+
+**6.6% / year**  →  **~2.2% / year** (since 2010).
+:::
+
+. . .
+
+::: {style="color: #777; margin-top: 20px; text-align: center;"}
+No single reform produced this — it's the cumulative pressure of payment innovation, policy, and a slower-moving economy.
+:::
+
+::: {.notes}
+The system is reformable. We are watching it reform, slowly, in real time. After honestly assessing where the substitutes fell short, the audience needs to see that something is working at the system level.
+:::
+
+
+## What works changes the architecture, not the patient {style="font-size: 26px;"}
+
+<br>
+
+V-BID and reference pricing succeed for the same reason — they make the high-value option the **path of least resistance**, and let providers compete to be on it.
+
+. . .
+
+<br>
+
+::: {style="font-size: 1.05em; color: #777;"}
+The substitutes that fail ask the patient to do the work — to shop, to interpret prices, to weigh clinical value against cost.
+:::
+
+. . .
+
+::: {style="text-align: center; font-size: 1.15em; margin-top: 20px;"}
+The patient is structurally not in a position to be that agent.
+:::
+
+::: {.notes}
+Pull together the lesson from Part 2. V-BID and reference pricing share a structural pattern: change the choice architecture, don't ask patients to shop. Price transparency and HDHPs share the opposite pattern. Where reform has been most successful, it has either bypassed the patient (reference pricing, tiered networks) or paired the price signal with clinical evidence (V-BID).
+:::
+
+
+## Off-chassis is already implementable {style="font-size: 28px;"}
+
+<br>
+
+::: {style="text-align: center; line-height: 2.0; font-size: 1.05em;"}
+
+**Maryland** all-payer global hospital budgets
+
+**ACO REACH**  ·  **Site-neutral payment**
+
+**Antitrust** on hospital and PE consolidation
+
+**Direct contracting**  ·  **Direct primary care**
+
+:::
+
+. . .
+
+::: {style="color: #777; margin-top: 20px; text-align: center; font-size: 0.95em;"}
+Germany's 2025 KHVVG reform is moving 60% of hospital revenue to fixed maintenance budgets.
+
+Maryland isn't a fringe idea — it's where the German chassis is heading.
+:::
+
+::: {.notes}
+Maryland's all-payer global hospital budgets are in their second decade — capitation at scale with a real track record. ACO REACH is the federal off-ramp where benchmarks are population-based rather than FFS-derived. Site-neutral payment would close the consolidation premium between hospital outpatient and physician offices. Antitrust on hospital and PE roll-ups restores the only check on leverage. Employer direct contracting and direct primary care are small purchasers walking away from the chassis. No silver bullets — but credible levers, several of which physicians sit at the decision points for.
+:::
+
+
+<!---------------------------------------------
+  PART 4: THE BILL, AND YOUR AGENCY
+----------------------------------------------->
+
+# Part 4: The bill, and your agency {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+
+
+## {background-color="#1C1C1C"}
+
+<br><br>
+
+::: {style="text-align: center; color: #CFAE70; font-size: 4.5em; font-weight: 700;"}
+$26,993
+:::
+
+::: {style="text-align: center; color: #E0D5C0; font-size: 1.2em; margin-top: 15px;"}
+Average annual family health insurance premium in 2025
+:::
+
+::: {style="text-align: center; color: #FFFFFF; font-size: 1.1em; font-weight: 600; margin-top: 30px;"}
+Rising faster than wages.
+:::
+
+::: {style="text-align: center; color: #777; font-size: 0.7em; margin-top: 30px;"}
+KFF Employer Health Benefits Survey, 2025.
+:::
+
+::: {.notes}
+The premium is the bill the system ultimately produces, and it's rising faster than the wages of the people whose employers pay it. That is the structural reason reform pressure isn't going away — and the reason every lever we just named is worth pulling.
+:::
+
+
+## The chassis isn't destiny {style="font-size: 32px;"}
+
+<br>
+
+::: {style="text-align: center; font-size: 1.15em; line-height: 2.0;"}
+
+**Practice model**  ·  **ACO terms**
+
+**Referral patterns**  ·  **Documentation norms**
+
+**Advocacy**
+
+:::
+
+<br>
+
+::: {style="text-align: center; color: #777; font-size: 1.0em;"}
+Physicians sit at decision points the chassis can't fully control.
+:::
+
+::: {.notes}
+Practice model — employed, independent, multispecialty group, direct primary care. Participation in risk and which contracts to engage with. Referral patterns move billions of dollars. Documentation and coding norms — the cultural difference between coding for care and coding for payment. Advocacy through state medical associations, specialty societies, and at the bedside. The chassis is a powerful default. It is not an immovable one.
+
+Reinhardt's closing charge in *Priced Out* is the right note to land on: the U.S. system's failures are *not* primarily economic — they are the operational expression of an unsettled moral question. *"To what extent should we be our poor and sick brothers' and sisters' keeper in health care?"* Other countries answered that question. We have not. And until we do, every reform — every guardrail substitute, every value-based contract, every transparency rule — is a workaround for a debate we have refused to have. Physicians, who occupy the room where that debate becomes operational, have unusual standing to push it forward.
+:::
+
+
+## Thank you {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+
+::: {style="text-align: center; color: #E0D5C0; font-size: 1.2em; margin-top: 50px;"}
+**John A. Graves, Ph.D.**
+:::
+
+::: {style="text-align: center; color: #999; font-size: 1.0em; margin-top: 20px;"}
+Vanderbilt University School of Medicine
+
+Owen Graduate School of Management
+:::
+
+::: {.notes}
+Discussion prompt if needed: "Where do you see the chassis bending — or hardening — in your own practice?"
+:::

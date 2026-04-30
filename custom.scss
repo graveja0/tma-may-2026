@@ -1,0 +1,115 @@
+/*-- scss:defaults --*/
+
+// Vanderbilt University color palette
+$vu-gold: #CFAE70;
+$vu-black: #1C1C1C;
+$vu-white: #FFFFFF;
+$vu-dark-gray: #777777;
+$vu-light-gray: #E4E4E4;
+$vu-sand: #E0D5C0;
+$vu-cream: #F5F3EF;
+$vu-oak: #946E24;
+$vu-highlight: #ECB748;
+
+// Base theme
+$body-bg: $vu-white;
+$body-color: $vu-black;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$presentation-heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$presentation-heading-color: $vu-black;
+$presentation-font-size-root: 36px;
+$link-color: $vu-oak;
+
+// Title slide
+$presentation-title-slide-text-align: center;
+
+/*-- scss:rules --*/
+
+// Title slide styling
+.reveal .slides section.quarto-title-block {
+  background-color: $vu-black;
+  color: $vu-white;
+
+  h1.title {
+    color: $vu-gold;
+    font-size: 1.8em;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    color: $vu-sand;
+    font-size: 0.7em;
+  }
+
+  .quarto-title-authors {
+    color: $vu-white;
+  }
+
+  .quarto-title-author-name {
+    color: $vu-white;
+  }
+
+  .quarto-title-affiliation {
+    color: $vu-dark-gray;
+  }
+
+  .date {
+    color: $vu-dark-gray;
+  }
+}
+
+// Clean up tables
+.reveal table {
+  font-size: 0.85em;
+  border-collapse: collapse;
+
+  th {
+    background-color: $vu-black;
+    color: $vu-white;
+    font-weight: 600;
+    padding: 8px 16px;
+  }
+
+  td {
+    padding: 8px 16px;
+    border-bottom: 1px solid $vu-light-gray;
+  }
+
+  tr:nth-child(even) {
+    background-color: $vu-cream;
+  }
+}
+
+// Section divider slides
+.reveal .slide-background[data-background-color="#1C1C1C"] + .slide {
+  color: $vu-white;
+}
+
+// Strong / bold in gold when on dark backgrounds
+.reveal section[data-background-color="#1C1C1C"] strong {
+  color: $vu-gold;
+}
+
+// Bold styling on light slides
+.reveal section:not([data-background-color]) strong {
+  color: $vu-oak;
+}
+
+// Blockquotes
+.reveal blockquote {
+  border-left: 4px solid $vu-gold;
+  padding-left: 20px;
+  font-style: italic;
+  color: $vu-dark-gray;
+}
+
+// MathJax sizing
+.reveal .MathJax {
+  font-size: 0.95em;
+}
+
+// Logo sizing
+.reveal .slide-logo {
+  max-height: 130px !important;
+  height: 130px !important;
+}
