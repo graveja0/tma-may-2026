@@ -275,7 +275,7 @@ The point isn't the formula — it's that there is one. The RUC's recommendation
 :::
 
 
-## Budget neutrality reaches a fragment of one term {style="font-size: 24px;"}
+## Total spending is payment (P) times quantity (Q) {style="font-size: 24px;"}
 
 ::: {.notes}
 This is the operational answer to the "but we have budget neutrality" pushback.
@@ -293,15 +293,139 @@ So when we said earlier that the U.S. has "no system-wide brake on aggregate spe
 
 <br>
 
-::: {.fragment style="text-align: center; font-size: 1.7em;"}
-Spending = $P \times Q$
+```{=html}
+<video id="pq-decomp-video"
+       src="media/videos/anim_pq_decomposition/1080p60/PQDecomposition.mp4"
+       style="width:100%; height:auto; max-height:70vh; object-fit:contain; display:block; margin: 0 auto;"
+       muted
+       playsinline
+       disablepictureinpicture
+       disableremoteplayback
+       controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"></video>
+<span class="fragment" style="display: block; height: 0; margin: 0; padding: 0;"></span>
+```
+
+```{=html}
+<script>
+(function () {
+  // sections/PQDecomposition.json — 2 sections (load + 1 click).
+  // load: Spending = P × Q (~2s)
+  // click 1: P distributes into P^Medicare × M (~3s, ending at ~5s)
+  const pausePoints = [2.0, 5.0];
+  let currentPause = 0;
+
+  function init() {
+    const video = document.getElementById('pq-decomp-video');
+    if (!video) return;
+    const ownSlide = video.closest('section');
+
+    video.currentTime = 0;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(function () {});
+    }
+
+    video.addEventListener('timeupdate', function () {
+      if (currentPause < pausePoints.length &&
+          video.currentTime >= pausePoints[currentPause]) {
+        video.pause();
+      }
+    });
+
+    function onFragmentShown(event) {
+      var frag = event && event.fragment;
+      if (!frag) return;
+      var fragSlide = frag.closest('section');
+      if (fragSlide !== ownSlide) return;
+      if (currentPause < pausePoints.length - 1) {
+        currentPause++;
+        video.play();
+      }
+    }
+
+    function bindReveal() {
+      if (typeof Reveal === 'undefined' || typeof Reveal.on !== 'function') {
+        setTimeout(bindReveal, 50);
+        return;
+      }
+      Reveal.on('fragmentshown', onFragmentShown);
+    }
+    bindReveal();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+```
+
+
+## Commercial contracts don't negotiate thousands of prices — they negotiate multipliers {style="font-size: 24px;"}
+
+::: {.notes}
+The ~75% figure comes from analysis of Texas Blue Cross claims data. The remaining 25% is where insurers customize — mainly adjusting capital-intensive services (imaging) down and labor-intensive services (E&M visits) up relative to Medicare's averages.
+
+Key nuance: although many commercial contracts start with a single Medicare multiplier, insurers routinely negotiate tiered adjustments for specific service categories.
+
+The insight is that even the exceptions are usually *defined relative to Medicare*. The chassis still sets the reference point.
 :::
 
 <br>
 
-::: {.fragment style="text-align: center; font-size: 1.7em;"}
-Spending = $P^{\text{CMS}} \times M \times Q$
+::: {style="text-align: center; font-size: 1.05em; line-height: 1.4;"}
+
+Medicare Payment  =  RVUs  ×  **$33.89**
+
+Commercial Payment  =  RVUs  ×  **$33.89  ×  1.8**
+
 :::
+
+. . .
+
+**~75%** of all commercial services are directly benchmarked to Medicare's relative values.
+
+. . .
+
+Contracts often use **tiered multipliers** by service type — e.g., E/M at 130%, procedures at 170% of Medicare.
+
+::: {.aside}
+E/M = evaluation and management (office visits, consultations)
+:::
+
+
+## The chassis isn't just scaffolding — it's a sounding board {style="font-size: 26px;"}
+
+::: {.notes}
+Every private contract built on that benchmark acts like a soundboard, making Medicare's signal louder in the private sphere.
+
+When Medicare gets something wrong — misprices a service, creates a perverse threshold — the error gets amplified across the entire economy. The 1998 surgical bonus elimination shifted medical school specialty choices by 5.5 percentage points, because the private market amplified the signal.
+
+"So that's the chassis — and now you understand it's not a passive frame, it's a live signal. Every incentive Medicare builds into the system echoes through the whole economy. With that in mind, let's look at what the engine actually produces."
+:::
+
+<br>
+
+Because ~75% of commercial contracts are pegged to Medicare, any change Medicare makes **amplifies and reverberates through the entire health-care economy**.
+
+. . .
+
+::: {style="font-size: 1.15em; text-align: center;"}
+A **$1** change in the Medicare fee schedule
+
+becomes a **$1.16** change in private payments.
+:::
+
+. . .
+
+Medicare serves as a **reference system** that bilateral market negotiations orbit around.
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Clemens & Gottlieb, "In the Shadow of a Giant," *Journal of Political Economy* (2017).
+:::
+
 
 
 ## The chassis is the same. The multiplier is what diverges. {style="font-size: 26px;"}
@@ -466,237 +590,415 @@ Reinhardt has a useful aphorism for why consolidation, once it has occurred, is 
   PART 2: WHAT WE'VE TRIED IN PLACE OF THE GUARDRAILS
 ----------------------------------------------->
 
-# Part 2: What we've tried {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+# Part 2: The Fix {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
 
 
-## Each missing guardrail has produced its own American workaround {style="font-size: 24px;"}
+## {background-color="#1C1C1C"}
+
+::: {style="text-align: center; margin-top: 80px; max-width: 900px; margin-left: auto; margin-right: auto;"}
+
+::: {style="border-left: 4px solid #CFAE70; padding: 30px 40px; background-color: rgba(148, 110, 36, 0.1);"}
+
+::: {style="font-size: 1.5em; color: #E0D5C0; line-height: 1.6;"}
+Cost-sharing provides **volume control**, not **value control**.
+:::
+
+:::
+
+:::
+
+::: {.notes}
+Set up the cost-sharing block as a key lesson before the data. HDHPs and patient cost-sharing successfully depress utilization, but they do not select for value. The next two slides walk through the evidence — Brot-Goldberg (indiscriminate cutting) and Chandra-Flack-Obermeyer (lethal consequences for the highest-risk patients).
+:::
+
+
+## Cost-sharing provides volume control, not value control {style="font-size: 26px;"}
+
+::: {.notes}
+This is the demand-side counterpart to the supply-side FFS machine. The FFS engine incentivizes volume on the supply side. Cost-sharing is the system's main tool for controlling volume on the demand side. Does it work?
+
+The Brot-Goldberg paper is the cleanest evidence we have. They studied a large firm that moved all employees from free healthcare (no cost-sharing at all) to a high-deductible plan. Key findings:
+
+1. People reduced spending by about 12-15% in year one — so yes, cost-sharing does depress volume.
+2. But they did NOT become better shoppers. They didn't switch to cheaper providers. They didn't compare prices. They just consumed less of everything.
+3. The reduction was indiscriminate — necessary and unnecessary care dropped equally.
+4. The effects were concentrated among lower-income employees, raising equity concerns.
+
+Setup for the next slide: Brot-Goldberg shows cost-sharing is a blunt instrument — patients cut everything indiscriminately. But does it actually hurt them? Chandra, Flack & Obermeyer answer: yes, people die.
+:::
+
+<br>
+
+The standard response to rising costs: make consumers pay more, and they'll shop smarter.
+
+HDHP enrollment surged from **13% to 33%** of the privately insured population (2010–2025). Utilization dropped **~15%**.
+
+. . .
+
+But researchers studied what actually happens when a large employer switched to a high-deductible plan:
+
+- Spending fell **immediately** — but patients cut **all** care indiscriminately
+- They did not price-shop. They did not distinguish necessary from unnecessary care
+- The savings came almost entirely from **avoiding care**, not from finding better prices
+- Low-income employees reduced spending the most — including **high-value preventive care**
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Brot-Goldberg et al., "What Does a Deductible Do?", *Quarterly Journal of Economics* (2017).
+:::
+
+::: {.aside}
+HDHP = high-deductible health plan
+:::
+
+
+## A blunt instrument can have lethal side effects {style="font-size: 28px;"}
+
+::: {.notes}
+The one-two punch with Brot-Goldberg. That paper showed cost-sharing is a blunt instrument. This paper shows the consequence: people die.
+
+The research design: Medicare Part D gives every new 65-year-old the same annual drug budget, but enrollment month varies by birth month. A February enrollee has been spending down her budget for months by December; a September enrollee has barely touched hers. Same people, same drugs, same health — different out-of-pocket prices driven purely by calendar timing.
+
+Key details:
+- The effect is concentrated in "middle spenders" — people whose drug spending puts them on track to hit the donut hole.
+- High-risk patients (identified via ML prediction models) cut back MORE on exactly the drugs that would benefit them most. Opposite of what a rational consumer model predicts.
+- Patients are largely unaware: 53% predict no negative health consequences from missing drugs for a week.
+- At $11,321 per life-year, these are extraordinarily cheap lives to save. Standard threshold for cost-effective interventions: $50,000–$100,000 per life-year.
+:::
+
+<br>
+
+Medicare Part D's "donut hole" randomly assigns different drug budgets based on birth month. Chandra, Flack & Obermeyer traced what happens next:
+
+. . .
+
+- A **$100/month** decrease in drug budget → **13.9% increase in mortality**
+- Patients stop taking **statins, blood pressure meds, diabetes drugs** — the high-value ones
+- The sickest patients — those most likely to have a heart attack — **cut back the most**
+- Only **one-third** of patients believe missing their drugs for a month could have serious consequences
+
+. . .
+
+::: {style="font-size: 1.15em;"}
+The cost to save these lives? **$11,321 per life-year.**
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Chandra, Flack & Obermeyer, "The Health Costs of Cost Sharing," *Quarterly Journal of Economics* (2024).
+:::
+
+
+## {background-color="#1C1C1C"}
+
+::: {style="text-align: center; margin-top: 80px; max-width: 900px; margin-left: auto; margin-right: auto;"}
+
+::: {style="border-left: 4px solid #CFAE70; padding: 30px 40px; background-color: rgba(148, 110, 36, 0.1);"}
+
+::: {style="font-size: 1.5em; color: #E0D5C0; line-height: 1.6;"}
+What about just **showing consumers the prices**?
+:::
+
+:::
+
+:::
+
+::: {.notes}
+Open the price-transparency block with the question. The Hospital Price Transparency Rule (2021) and Transparency in Coverage Rule (2022–2024) bet that publishing negotiated rates would let consumers shop their way to lower prices. Five years in, the verdict is in. The next three slides walk it: low awareness and low effect on patients; supply-side backfire; the architecture-change exception that actually works.
+:::
+
+
+## What about just showing consumers the prices? {style="font-size: 28px;"}
+
+::: {.notes}
+The Hospital Price Transparency Rule (effective Jan 2021) requires hospitals to publish machine-readable files with all negotiated rates, plus consumer-friendly displays for 300+ shoppable services. The Transparency in Coverage Rule (phased 2022–2024) requires insurers to publish negotiated rates and offer price comparison tools.
+
+Five years in, roughly 46% of hospitals still aren't fully compliant (HHS OIG, Nov 2024). CMS has fined only 27 hospitals, totaling about $2 million — average hospital revenue is $270 million.
+
+The Cooper MRI finding is devastating for the consumer-shopping model: MRIs are about as "shoppable" as healthcare gets — plannable, undifferentiated, widely available, significant out-of-pocket cost. And yet physician referral patterns explain 52% of price variance, while patient cost-sharing explains less than 1%. If transparency can't move the needle on MRIs, what hope does it have for complex inpatient care?
+:::
+
+
+<br>
+
+Since 2021, hospitals must publish negotiated prices for every service. Since 2023, insurers must offer online price comparison tools.
+
+. . .
+
+But **only 9%** of Americans even know the data exists. When California offered state employees a transparency tool, **only 12%** used it.
+
+. . .
+
+And when patients *do* have prices, it doesn't matter much. Patients bypass an average of **6 cheaper MRI providers** on the way to their appointment — because their doctor told them where to go.
+
+::: {style="color: #777; margin-top: 15px;"}
+Physician referral explains **52×** more price variance than patient cost-sharing.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: KFF Health Tracking Poll; Desai et al., *Health Affairs* (2017); Chernew, Cooper et al., *Journal of Health Economics* (2021).
+:::
+
+
+## When you publish prices, suppliers pay attention {style="font-size: 26px;"}
+
+::: {.notes}
+The Danish concrete study (Albæk, Møllgaard & Overgaard, 1997) is the canonical example of supply-side transparency backfiring. The Danish antitrust authority published firm-specific transaction prices to enhance competition. Instead, it eliminated secret discounting and facilitated tacit collusion. Prices rose 15-20% within one year.
+
+Barnes et al. (2024) ran an RCT using New York's medical charge transparency tool. The +0.75% increase in billed charges was concentrated among low-priced providers — consistent with upward convergence. The tool improved provider information about competitors more than it improved consumer shopping.
+
+KFF Health News (Feb 2026) found that the primary users of hospital transparency data are hospitals benchmarking against peers and insurers building negotiation strategies — not patients comparison shopping.
+
+Discussion prompt: "We published the prices to help patients shop. Instead, hospitals used the data to benchmark upward. What does that tell you about who really has agency in this market?"
+:::
+
+
+<br>
+
+In 1993, Denmark published firm-specific prices for concrete to promote competition. Within a year, prices **rose 15–20%**. Transparency eliminated secret discounting and made it easier for firms to coordinate upward.
+
+. . .
+
+The same pattern is emerging in healthcare. A randomized trial of New York's price transparency tool found that billed charges **increased 0.75%** — driven by low-priced providers raising prices once they could see what competitors charged.
+
+. . .
+
+::: {style="font-size: 1.15em;"}
+The primary users of hospital pricing data are **not patients** — they are hospitals and insurers using it as competitive intelligence.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: Albæk et al., *Journal of Industrial Economics* (1997); Barnes, Glied et al., NBER Working Paper 32580 (2024); KFF Health News (2026).
+:::
+
+
+## Transparency works when it changes the choice architecture, not just the information set {style="font-size: 22px;"}
+
+::: {.notes}
+The constructive counterpoint to the prior two slides. Transparency alone doesn't work — but transparency paired with financial incentives and smart defaults does.
+
+Tiered networks show the same dynamic at a broader scale: a Health Affairs study found tiered plans reduced total spending ~5%, and the savings came primarily from providers cutting prices to get into the preferred tier — not from patients actively switching. The architecture disciplines pricing even if patients don't shop.
+
+The punchline for this audience: "More information is always better for a market. But information alone assumes patients can act on it. Reference pricing and smart defaults do the acting for them — and it turns out the biggest effect is on providers, not patients."
+:::
+
+
+<br>
+
+CalPERS (California Public Employees' Retirement System) set a **reference price** of $30,000 for hip and knee replacements. Choose a facility at or below that price — no extra cost. Choose above it — you pay the difference.
+
+. . .
+
+- Average price per procedure fell **26%**. CalPERS saved **$5.5 million** in two years.
+- **85%** of savings came from hospitals **cutting their prices** to stay under the cap — not from patients switching.
+- Same approach for colonoscopy ($1,500 cap): prices fell **21%**, ambulatory surgery center use rose from 69% to 91%.
+
+. . .
+
+::: {style="font-size: 1.15em;"}
+The lesson: **don't ask patients to shop — change the default.** Make the high-value option the path of least resistance, and let providers compete to be on it.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: Robinson & Brown, *Health Affairs* (2017); Whaley, *American Journal of Health Economics* (2019); Robinson et al. (2021).
+:::
+
+
+## The scalpel exists: align the price tag with clinical value {style="font-size: 24px;"}
+
+::: {.notes}
+V-BID shifts the value judgment from the patient (who can't evaluate clinical value) to the plan designer (informed by clinical evidence). The patient's out-of-pocket price becomes a signal of value, not just a cost-control lever. But V-BID only fixes the demand side — the provider is still paid FFS.
+:::
+
+
+<br>
+
+**Value-based insurance design (V-BID):** instead of charging the same copay for everything, make high-value care cheap and low-value care expensive. Let the price tag encode the clinical evidence.
+
+. . .
+
+The MI FREEE trial (Choudhry et al., *NEJM* 2011): heart attack survivors randomized to **$0 copay** for statins, beta-blockers, and ACE inhibitors.
+
+- Medication adherence **increased 4–6 percentage points**
+- Patient out-of-pocket costs fell **~$264/year**
+- Total healthcare spending **did not increase** — free drugs were offset by fewer hospitalizations
+
+. . .
+
+::: {style="font-size: 1.15em;"}
+Traditional cost-sharing asks patients to be their own mechanic.
+
+V-BID admits they can't be — and uses the price tag to tell them which repairs actually matter.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Choudhry et al., "Full Coverage for Preventive Medications after Myocardial Infarction," *NEJM* (2011).
+:::
+
+
+## {background-color="#1C1C1C"}
+
+::: {style="text-align: center; margin-top: 80px; max-width: 900px; margin-left: auto; margin-right: auto;"}
+
+::: {style="border-left: 4px solid #CFAE70; padding: 30px 40px; background-color: rgba(148, 110, 36, 0.1);"}
+
+::: {style="font-size: 1.5em; color: #E0D5C0; line-height: 1.6;"}
+Is **value-based care** the offramp from FFS?
+:::
+
+:::
+
+:::
+
+::: {.notes}
+Open the VBC block. After cost-sharing (which controls volume but not value) and price transparency (which doesn't reach the multiplier), VBC is the most-funded reform effort. Premise: pay for outcomes, not activity. Question we're about to answer: did VBC actually change the underlying economics, or did it just relabel them?
+:::
+
+
+## What does "value" even mean in healthcare? {style="font-size: 28px;"}
+
+::: {.notes}
+The Porter value equation is the cleanest framing.
+
+Value is outcomes per dollar spent.
+
+FFS is structurally indifferent to outcomes — it pays for activity.
+
+VBC aims to add performance incentives and more importantly, *performance risk* (the numerator) to the equation.
+
+But here's the tension: almost every VBC model still calculates its benchmarks, its bonuses, and its penalties using the FFS system as the reference point. The chassis is still underneath.
+:::
+
+
+<br>
+
+::: {style="text-align: center; font-size: 1.4em; line-height: 1.4;"}
+
+Value  =  $\dfrac{\text{Risk adjusted outcomes}}{\text{Total Cost}\quad (P \times Q)}$
+
+:::
+
+. . .
+
+FFS maximizes the **denominator**. Every service adds cost, regardless of whether it improves the outcome.
+
+. . .
+
+Value-based care (VBC) attempts to **flip the incentive** — reward the numerator, constrain the denominator.
+
+
+## The value chain: how VBC is supposed to work {style="font-size: 26px;"}
+
+![](media/value-chain-anderson.png){fig-align="center" width="100%"}
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Source: Jordan Anderson, MD, MBA, Belong Health.
+:::
+
+::: {.notes}
+This is the theory. The key question is: does the reality match?
+
+The contracting terms at the bottom left are where the chassis shows through — benchmarking, time course, upside/downside are almost always derived from FFS claims data.
+
+And the care transformation box is where the gap between rhetoric and reality is widest.
+
+Much of the VBC effort has gone into coding and benchmark optimization rather than genuine people/process/technology transformation.
+:::
+
+
+## Most "value-based" models are still bolted onto the FFS chassis {style="font-size: 24px;"}
+
+::: {.notes}
+Key point for the audience: calling something "value-based" doesn't mean you've changed the underlying economics. If the benchmark, the bundle price, or the base payment is derived from FFS, you're still orbiting the chassis.
+:::
+
+
+<br>
+
+<table style="font-size: 0.75em; width: 100%;">
+<thead>
+<tr>
+<th style="text-align: left; width: 22%;">Model</th>
+<th style="text-align: left; width: 50%;">How it works</th>
+<th style="text-align: center; width: 28%;">Still on the chassis?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="fragment">
+<td><strong>Pay for performance</strong></td>
+<td>FFS + bonus/penalty for hitting quality targets</td>
+<td style="text-align: center;">Yes — FFS is the base payment</td>
+</tr>
+<tr class="fragment">
+<td><strong>Bundled / episode payment</strong></td>
+<td>Single price for an episode (e.g., hip replacement, 90 days). Typically, FFS payment + reconciliation against a target</td>
+<td style="text-align: center;">Mostly — bundle price derived from historical FFS spending</td>
+</tr>
+<tr class="fragment">
+<td><strong>Shared savings (ACOs)</strong></td>
+<td>FFS payment + reconciliation against a spending benchmark</td>
+<td style="text-align: center;">Yes — benchmark set from FFS claims history</td>
+</tr>
+<tr class="fragment">
+<td><strong>Shared risk (ACOs)</strong></td>
+<td>Same, but provider owes money if spending exceeds benchmark</td>
+<td style="text-align: center;">Yes — same FFS-derived benchmark</td>
+</tr>
+<tr class="fragment">
+<td><strong>Global payment</strong></td>
+<td>Fixed $/patient/month — provider bears full risk</td>
+<td style="text-align: center;"><strong>No</strong> — fully off the chassis</td>
+</tr>
+</tbody>
+</table>
+
+::: {.fragment style="font-size: 1.15em;"}
+Each model adds a layer of accountability — but only global payment changes the **underlying price architecture**.
+:::
+
+::: {.aside}
+ACO = accountable care organization
+:::
+
+
+## Where are we? Mostly still on the FFS interstate {style="font-size: 28px;"}
+
+::: {.notes}
+Key takeaway: over half of all payments are still pure FFS or FFS with a quality bonus stapled on top. Only ~10% are in global/capitated arrangements.
+
+Medicare Advantage looks better on paper (21% capitated), but remember — MA plans themselves often pay their provider networks FFS. The capitation is between CMS and the plan, not between the plan and the provider.
+
+The MSSP numbers sound impressive: 511 ACOs, 12.6 million beneficiaries, 53% of traditional Medicare now in an accountable care relationship. But "accountable care relationship" is doing a lot of work in that sentence — most of those beneficiaries are still receiving FFS care with a reconciliation process layered on top.
+
+The exit ramp metaphor: we are not on a highway off the chassis. We are on an exit ramp — and most of the traffic is still on the interstate.
+:::
+
 
 <br>
 
 ::: {style="font-size: 0.95em;"}
 
-| Missing guardrail | What we've tried |
-|:---|:---|
-| Risk Bearing and Risk Pooling | Capitation / Medicare Advantage; Value-Based Care |
-| Rate setting (the multiplier) | Reference pricing · price transparency |
-| Aggregate spending control | ACOs · bundles · MA capitation · V-BID |
+| | All payers | Medicare | Medicare Advantage | Commercial |
+|:---|:---:|:---:|:---:|:---:|
+| **FFS or FFS + quality bonus** | ~55% | ~56% | ~36% | ~61% |
+| **Shared savings/risk (ACOs, bundles)** | ~35% | ~34% | ~43% | ~31% |
+| **Global / capitated** | ~10% | ~10% | ~21% | ~8% |
 
-:::
-
-<br>
-
-::: {style="text-align: center; color: #777; font-size: 0.95em;"}
-Some work. Most orbit the chassis.
-:::
-
-::: {.notes}
-Re-orient the audience: we just diagnosed five structural absences. Now we look at what the U.S. has built in place of each one. We won't dwell on #2 (benefits — the ACA set a floor) or #4 (OOP cap — slow tug-of-war between the ACA cap, IRA Part D, and HDHP expansion).
-
-This framing is consistent with comparative health policy scholarship. Gusmano, Laugesen, Rodwin & Brown ("Getting the Price Right: How Some Countries Control Spending in a Fee-for-Service System," Health Affairs 2020) explicitly argue that FFS is not the cause of U.S. high spending — countries with lower prices use FFS too. Light & Rodwin ("Bending the Cost Growth Curve," Milbank Quarterly 2020, tribute to Uwe Reinhardt) describe the German "quasi-market" of associations of providers and payers as the structural difference. Reinhardt's *Priced Out* (2019) and Anderson, Reinhardt et al. ("It's the Prices, Stupid," Health Affairs 2003) are the spine of this position.
-:::
-
-
-## Where does risk land? {style="font-size: 30px;"}
-
-<br>
-
-Every "risk-bearing" VBC entity creates a **micro-pool**.
-
-. . .
-
-- **MA plans** — full risk on enrolled beneficiaries; selectively healthier
-- **Two-sided ACOs** — closest to genuine pooling; benchmark still FFS-derived
-- **One-sided ACOs** — upside only; not really risk-bearing
-- **Bundled payments** — episode-level, not population-level
-
-. . .
-
-::: {style="font-size: 1.1em; color: #777; margin-top: 20px;"}
-None substitute for population-level pooling. We've re-fragmented risk along new contractual seams.
-:::
-
-::: {.notes}
-None of these substitute for population-level pooling. They re-fragment risk along new seams — by employer, by plan, by attribution algorithm. MA is the largest substitute pool but selects on health (favorable enrollment, coding intensity, supplemental benefits). Two-sided ACOs come closest to genuine population pooling, but the pool is small and the benchmark is still derived from FFS spending. The fundamental fragmentation problem isn't fixed by adding new contractual envelopes; it's relocated.
-:::
-
-
-## Risk-bearing VBC sets its targets from FFS history {style="font-size: 28px;"}
-
-<br>
-
-::: {style="font-size: 1.2em;"}
-**~55%** of payments are still pure FFS or FFS + quality bonus.
-
-**~10%** are global / capitated.
 :::
 
 . . .
 
-<br>
-
-::: {style="font-size: 1.15em;"}
-CBO: CMMI's first decade *increased* net federal spending by **$5.4 billion**.
-:::
+**511** ACOs now participate in Medicare's Shared Savings Program, covering **12.6 million** beneficiaries — **53%** of traditional Medicare.
 
 . . .
 
-::: {style="color: #777; margin-top: 15px;"}
-A growing share of ACO "savings" comes from **coding intensity**, not different care.
+::: {style="color: #777;"}
+CMS's stated goal: every Medicare FFS beneficiary in an accountable care relationship by **2030**.
 :::
 
 ::: {style="font-size: 0.45em; text-align: center; color: #888;"}
-Sources: HCP-LAN APM Measurement (2024); CBO CMMI Evaluation (2023); Ryan et al., "All I Do Is Win" (2023).
-:::
-
-::: {.notes}
-HCP-LAN APM Measurement (2024). MA looks better at ~21% global, but MA plans themselves often pay providers FFS — capitation lives between CMS and the plan, not between the plan and the doctor. The deeper problem: every VBC arrangement except full population capitation derives its benchmark from FFS claims. Hitting an inflated benchmark is not the same as fixing the inflation.
+Sources: HCP-LAN / AHIP APM Measurement (CY 2024); CMS MSSP Participation Highlights (2026).
 :::
 
 
-## Reference pricing actually moves the multiplier {style="font-size: 24px;"}
-
-<br>
-
-CalPERS reference price for hip / knee replacement: **$30,000 cap.**
-
-. . .
-
-<br>
-
-:::: {.columns}
-
-::: {.column width="50%"}
-::: {style="text-align: center;"}
-
-::: {style="font-size: 2.8em; font-weight: 700; color: #946E24;"}
-−26%
-:::
-
-::: {style="font-size: 1.0em;"}
-average price
-:::
-:::
-:::
-
-::: {.column width="50%"}
-::: {style="text-align: center;"}
-
-::: {style="font-size: 2.8em; font-weight: 700; color: #946E24;"}
-85%
-:::
-
-::: {style="font-size: 1.0em;"}
-of savings: hospitals cutting prices
-:::
-:::
-:::
-
-::::
-
-. . .
-
-<br>
-
-::: {style="text-align: center; color: #777;"}
-Change the architecture; don't ask patients to shop.
-:::
-
-::: {style="font-size: 0.45em; text-align: center; color: #888;"}
-Source: Robinson & Brown, *Health Affairs* (2017).
-:::
-
-::: {.notes}
-Reference pricing is genuinely off-chassis — the benefit cap forces providers to compete to fit the price, rather than the payer accepting whatever multiplier the market produces. Same pattern with colonoscopy: 21% price drop, ASC use rose 69% → 91%. The lesson: change the architecture, don't ask patients to shop. Reference pricing is the cleanest example of a U.S. workaround that actually attacks the multiplier — payers cap what they will pay; providers either accept the cap or lose the business. Notice the asymmetry with price transparency, which we'll see next: transparency tries to discipline prices through patient shopping; reference pricing disciplines them through the benefit design itself, which is far more effective because the patient doesn't have to act.
-:::
-
-
-## Price transparency: 9% of Americans know the data exists {style="font-size: 24px;"}
-
-<br>
-
-When CalPERS offered a transparency tool, only **12%** of employees used it.
-
-. . .
-
-Patients bypass an average of **6 cheaper MRI providers** to reach their referred appointment.
-
-. . .
-
-::: {style="font-size: 1.15em; margin-top: 20px;"}
-**Physician referral explains ~52× more price variance than cost-sharing.**
-:::
-
-::: {style="font-size: 0.45em; text-align: center; color: #888;"}
-Sources: KFF Health Tracking Poll; Desai et al., *Health Affairs* (2017); Chernew, Cooper et al., *J. Health Economics* (2021).
-:::
-
-::: {.notes}
-Patient shopping isn't moving the market because the channel through which care happens is the physician referral, not the consumer search.
-:::
-
-
-## Worse — published prices can move prices the wrong way {style="font-size: 26px;"}
-
-<br>
-
-Denmark, 1993: published firm-specific concrete prices to enhance competition.
-
-. . .
-
-::: {style="font-size: 1.15em; margin-top: 15px;"}
-Within a year, prices **rose 15–20%** — firms used the data to coordinate upward.
-:::
-
-. . .
-
-::: {style="color: #777; margin-top: 20px;"}
-The primary users of hospital pricing data today are **hospitals and insurers**, not patients.
-:::
-
-::: {style="font-size: 0.45em; text-align: center; color: #888;"}
-Sources: Albæk, Møllgaard & Overgaard, *J. Industrial Economics* (1997); Barnes, Glied et al., NBER Working Paper 32580 (2024).
-:::
-
-::: {.notes}
-Transparency in concentrated markets becomes competitive intelligence rather than consumer discipline. Newer evidence (Barnes et al., NBER 2024) shows the same pattern in U.S. healthcare. The lesson: reference pricing changes the price tag at the architecture level and works; transparency assumes patients are the agents who can move the multiplier — and they are not.
-:::
-
-
-## V-BID: tell patients with the copay which care matters {style="font-size: 24px;"}
-
-<br>
-
-**$0 copay** for high-value preventive medications.
-
-**Tiered networks** for procedures.
-
-. . .
-
-<br>
-
-::: {style="text-align: center; font-size: 1.4em;"}
-Medicare Advantage V-BID:
-
-**10 plans (2017)  →  1,000+ (2024)**
-:::
-
-. . .
-
-::: {style="color: #777; margin-top: 20px; text-align: center;"}
-V-BID steers utilization toward high-value care — not by asking patients to shop on price, but by changing the price tag on the choice.
-:::
-
-::: {style="font-size: 0.45em; text-align: center; color: #888;"}
-Sources: Choudhry et al., "Full Coverage for Preventive Medications after MI," *NEJM* (2011); CMS Innovation Center.
-:::
-
-::: {.notes}
-Value-based insurance design — make high-value care cheap, low-value care expensive. V-BID belongs in the *aggregate spending control* category because it shapes WHICH services patients use, not WHAT services cost. The hospital still gets paid 2.4× Medicare for the imaging visit; V-BID just affects who walks in for it.
-
-The MI FREEE trial: $0 copay for post-MI statins, beta-blockers, ACE inhibitors → adherence improved 4–6 percentage points with no net spending increase. CMS is making V-BID flexibilities permanent in MA. V-BID works because it uses cost-sharing as a clinical compass rather than a blunt cost-control lever — patients aren't being asked to weigh price against necessity, they're being told which care matters.
-
-Note the family resemblance with reference pricing — both succeed by changing the choice architecture rather than asking patients to shop. They target different guardrails (multiplier vs. utilization mix), but the underlying design lesson is the same.
-:::
 
 
 <!---------------------------------------------
@@ -866,4 +1168,91 @@ Owen Graduate School of Management
 
 ::: {.notes}
 Discussion prompt if needed: "Where do you see the chassis bending — or hardening — in your own practice?"
+:::
+
+
+<!---------------------------------------------
+  EXTRA SLIDES
+----------------------------------------------->
+
+# Extra Slides {background-color="#1C1C1C" style="text-align: center; color: #CFAE70;"}
+
+
+## Lately, the volume engine is revving harder {style="font-size: 28px;"}
+
+::: {.notes}
+**Levels vs. growth-rate reconciliation:** Anderson et al. (2003) explains the LEVEL — U.S. prices are higher than peer nations. Chernew (2026) explains the GROWTH RATE — last year's 7.2% increase reflects more volume and intensity at those already-high prices. Not contradictory. Prices explain the level; volume explains the recent growth.
+
+NHE 2024 decomposition: of 6.1% per-capita growth, price contributed 2.5 pp (~41%) and use/intensity contributed 3.6 pp (~59%). Healthcare price growth at 2.5% was below economywide inflation.
+
+What insurers are seeing: UnitedHealth's medical care ratio hit 88.9% in 2025 (up from 82.3% in 2023). Humana's MA MLR spiked above 90% in 2024. WTW projects 8.7% employer cost growth for 2025; PwC HRI 8%. Behavioral health utilization up ~40% vs. pre-pandemic.
+
+Structural vs. temporary: post-COVID catch-up is largely spent. Most other drivers are structural — GLP-1s, AI coding intensity, aging demographics, behavioral health reset, consolidation-driven site shifts.
+:::
+
+
+<br>
+
+U.S. health spending hit **$5.3 trillion** in 2024 — up **7.2%**. But healthcare prices grew only **2.5%**, *below* general inflation.
+
+. . .
+
+The rest? **Volume and intensity** — more encounters, higher-acuity coding, new high-cost drugs, site-of-service shifts to hospital outpatient departments.
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: CMS National Health Expenditure Data (2024); Chernew, "It's Not the Prices, Stupid," *Health Affairs Forefront* (2026); Hartman et al., *Health Affairs* (2026).
+:::
+
+
+## Some of the growth is real — more people getting more care {style="font-size: 26px;"}
+
+::: {.notes}
+Genuine demand expansion — real increases in Q. People accessing care they weren't getting before, or new categories of treatment that didn't previously exist at scale.
+
+GLP-1 note: IRA's negotiated prices for Ozempic/Wegovy (~$245/month, effective 2026–2027) represent a ~75–80% discount from list. Lower per-unit cost will likely expand access and volume further.
+
+Demographics: 11,000 Americans/day aging into Medicare. Not a transient shock — persists for decades. CMS projections assume this alone adds ~1–2 pp to annual spending growth.
+:::
+
+<br>
+
+**GLP-1 drugs** — U.S. GLP-1 spending: **$13.7B** (2018) → **$71.7B** (2023). ~6–7 million Americans now on a GLP-1. List prices run **$1,000–$1,350/month**. Medicare-negotiated prices (~$245/month, effective 2026–2027) will lower per-unit cost but likely expand volume further.
+
+. . .
+
+**Behavioral health** — Utilization up **~40%** vs. pre-pandemic. Telehealth removed access barriers, and unmet demand is being met. Growing **12–15% annually** — a permanent reset, not a post-COVID blip.
+
+. . .
+
+**Demographics** — **11,000 Americans/day** aging into Medicare. The oldest, sickest, most expensive cohort in history is just entering the system. This will persist for decades.
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: CMS National Health Expenditure Projections (2024); Evernorth/Cigna Behavioral Health Trends (2025).
+:::
+
+
+## But some of what looks like "volume" is really intensity in disguise {style="font-size: 24px;"}
+
+::: {.notes}
+The counterpoint. These examples show up as "use and intensity" in the NHE data, but they trace back to the structural forces from earlier — consolidation and FFS documentation incentives. Same care, more revenue.
+
+Site-of-service shifts connect back to consolidation. AI coding intensity connects to wrong-chassis-wrong-data, now with AI accelerating the problem.
+:::
+
+<br>
+
+**Site-of-service shifts** — When hospitals acquire physician practices, care moves from offices to hospital outpatient departments at higher prices. MedPAC: HOPD spending growing **~2 pp faster** than office-based spending annually. This is the **consolidation** story, once again.
+
+. . .
+
+**AI coding intensity** — Ambient AI scribes are increasing documented diagnoses per encounter (3.0 → 4.1 at Texas Oncology) and wRVUs (+11% at Riverside Health). Same encounters, more revenue. This is the **FFS documentation** machine on steroids.
+
+. . .
+
+::: {style="color: #777;"}
+The NHE says "use and intensity" drove 59% of recent spending growth. But not all volume is created equal — some is genuine demand, and some is the price and incentive architecture humming along, with AI-laden jet fuel.
+:::
+
+::: {style="font-size: 0.45em; text-align: center; color: #888;"}
+Sources: MedPAC Report to Congress (2024); *Nature Digital Medicine* (2025).
 :::

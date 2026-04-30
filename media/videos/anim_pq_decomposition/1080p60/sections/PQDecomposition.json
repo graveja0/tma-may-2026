@@ -1,0 +1,26 @@
+[
+    {
+        "name": "01_simple",
+        "type": "default.normal",
+        "video": "PQDecomposition_0000_01_simple.mp4",
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "120",
+        "duration": "2.000000",
+        "avg_frame_rate": "60/1",
+        "codec_name": "h264",
+        "pix_fmt": "yuv420p"
+    },
+    {
+        "name": "02_decomposed",
+        "type": "default.normal",
+        "video": "PQDecomposition_0001_02_decomposed.mp4",
+        "width": 1920,
+        "height": 1080,
+        "nb_frames": "180",
+        "duration": "3.000000",
+        "avg_frame_rate": "60/1",
+        "codec_name": "h264",
+        "pix_fmt": "yuv420p"
+    }
+]
